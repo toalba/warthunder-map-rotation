@@ -1,0 +1,16 @@
+{
+    "gameMode": [
+        "realistic"
+    ],
+    "gameType": "randomBattle",
+    "techType": "tank",
+    "findMissionValue": "",
+    "findUserValue": "",
+    "findUserType": "USERNAME",
+    "isUserOwnReplays": false,
+    "rankRange": "",
+    "timeRangeFrom": "",
+    "timeRangeTo": "",
+    "limit": 100,
+    "page": 1
+}

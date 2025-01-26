@@ -39,4 +39,4 @@ def update_graph_live(n):
 
 
 if __name__ == '__main__':
-    app.run(debug=False, port=8080, host='wt.paid-actors.com')
+    app.run(debug=False, port=8080)

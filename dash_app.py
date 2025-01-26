@@ -1,15 +1,10 @@
-import datetime
-
-import dash
 from dash import Dash, dcc, html, Input, Output, callback
-import plotly
 from get_data import get_map_data, plot
 
-# pip install pyorbital
 
 external_stylesheets = ['https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css']
 get_map_data()
-app = Dash(__name__, external_stylesheets=external_stylesheets)
+app = Dash('Warthunder Live Map Rotation', external_stylesheets=external_stylesheets)
 app.layout = html.Div(
     html.Div([
         html.H4('Warthunder Map Rotation'),
@@ -44,4 +39,4 @@ def update_graph_live(n):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False, port=8080, host='wt.paid-actors.com')

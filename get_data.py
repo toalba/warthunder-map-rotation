@@ -1,7 +1,7 @@
 # Used to test the API and the data that is returned
 import requests
 import json
-from show_data import graph, like_grap
+from show_data import graph
 s = requests.Session()
 cookies = None
 with open("cookies.json") as json_file:

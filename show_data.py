@@ -3,8 +3,12 @@ import pandas as pd
 import json
 
 
-def graph(data):
+def graph_lastten(data):
     fig = px.bar(data, x=0, y=1, title="Map Distribution last 10min", text_auto=True,template="plotly_dark")  
+    return fig
+
+def graph_lastone(data):
+    fig = px.bar(data, x=0, y=1, title="Map Distribution last Minute", text_auto=True,template="plotly_dark")  
     return fig
 
 def like_graph(data):

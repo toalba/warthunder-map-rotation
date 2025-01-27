@@ -1,5 +1,5 @@
 from dash import Dash, dcc, html, Input, Output, callback
-from get_data import get_map_data, plot
+from get_data import get_map_data, plot_one, plot_ten
 
 
 external_stylesheets = ['https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css']
@@ -10,6 +10,7 @@ app.layout = html.Div(
         html.H4('Warthunder Map Rotation'),
         #html.Div(id='live-update-text'),
         dcc.Graph(id='live-update-graph'),
+        dcc.Graph(id='live-update-graph-one'),
         dcc.Interval(
             id='interval-component',
             interval=1*10000, # in milliseconds
@@ -29,7 +30,12 @@ app.layout = html.Div(
 @callback(Output('live-update-graph', 'figure'),
               Input('interval-component', 'n_intervals'))
 def update_graph_live(n):
-    return plot()
+    return plot_ten()
+
+@callback(Output('live-update-graph-one', 'figure'),
+              Input('interval-component', 'n_intervals'))
+def update_graph_live(n):
+    return plot_one()
 
 @callback(Input('update-sheet', 'n_intervals'))
 def update_graph_live(n):

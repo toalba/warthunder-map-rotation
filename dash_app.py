@@ -4,7 +4,8 @@ from get_data import get_map_data, plot_one, plot_ten
 
 external_stylesheets = ['https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css']
 get_map_data()
-app = Dash('Warthunder Live Map Rotation', external_stylesheets=external_stylesheets)
+app = Dash(__name__, external_stylesheets=external_stylesheets)
+app.title = "Warthunder Live Map Rotation"
 app.layout = html.Div(
     html.Div([
         html.H4('Warthunder Map Rotation'),
@@ -45,4 +46,4 @@ def update_graph_live(n):
 
 
 if __name__ == '__main__':
-    app.run(debug=False, port=8080)
+    app.run(debug=False, port=8081,host='wt.paid-actors.eu')
